@@ -4,12 +4,18 @@ AI-powered fundraising campaign manager for PayIt2.com. Create campaigns, genera
 
 ## Installation
 
+### Quick Start (single file)
+
+Copy [`plugin.md`](plugin.md) into your project and add it to your Claude Code context. This single file contains all skills, commands, agents, and reference data.
+
+### Full Installation (repo clone)
+
 1. Clone this repo:
    ```bash
    git clone https://github.com/PayIt2/payit2-campaign-manager.git
    ```
 
-2. Open Claude Code settings and add the plugin path to your project configuration:
+2. Add the plugin to your Claude Code project:
    ```bash
    claude project add-plugin /path/to/payit2-campaign-manager
    ```
