@@ -1,11 +1,14 @@
 # CLAUDE.md
 
-## Build
+This repo is the PayIt2 Campaign Manager plugin for Claude Code.
 
-Before every commit, rebuild the plugin zip:
+## Structure
 
-```bash
-./build-plugin.sh
-```
+- `skills/` — Four campaign workflow skills (creation, promotion, engagement, analytics)
+- `commands/` — Slash commands (`/launch-campaign`, `/weekly-checkin`, `/boost-campaign`, `/thank-donors`)
+- `agents/` — Autonomous agents (campaign-coach, content-generator, donor-outreach, seo-optimizer)
+- `.claude-plugin/plugin.json` — Plugin manifest
 
-This packages all skills, commands, agents, and the plugin manifest into `payit2-campaign-manager.zip` at the repo root. Always commit the zip alongside any changes to source files.
+## Git Workflow
+
+Commit source files directly. No build step required.
