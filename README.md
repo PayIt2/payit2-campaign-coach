@@ -2,6 +2,33 @@
 
 AI-powered fundraising campaign manager for PayIt2.com. Create campaigns, generate content, engage donors, and optimize performance — all through conversation with Claude.
 
+## Installation
+
+1. Clone this repo:
+   ```bash
+   git clone https://github.com/PayIt2/payit2-campaign-manager.git
+   ```
+
+2. Open Claude Code settings and add the plugin path to your project configuration:
+   ```bash
+   claude project add-plugin /path/to/payit2-campaign-manager
+   ```
+
+   Or manually add it to your `.claude/settings.json`:
+   ```json
+   {
+     "plugins": [
+       "/path/to/payit2-campaign-manager"
+     ]
+   }
+   ```
+
+3. Restart Claude Code. The skills, commands, and agents will be available automatically.
+
+### Verify Installation
+
+Type `/launch-campaign` in Claude Code. If the plugin is loaded, it will walk you through creating a new fundraising campaign.
+
 ## Overview
 
 This plugin turns Claude into a full-service fundraising coach and campaign manager. It encodes the strategies used by the top-performing crowdfunding organizers and makes them accessible to anyone through conversation.
