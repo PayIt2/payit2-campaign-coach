@@ -1,6 +1,7 @@
 ---
 name: group-collector
 description: Use this agent to autonomously generate a complete group payment collection package — launch messages, reminder sequences, progress updates, and follow-ups for non-payers. Deploy when the user needs a full communication plan for collecting money from a group.
+---
 
 <example>
 Context: Team captain needs to collect uniform fees from 25 teammates
@@ -32,7 +33,6 @@ Stalled collections need a mix of group progress updates (social pressure withou
 model: sonnet
 color: green
 tools: ["Read", "Write", "Edit"]
----
 
 You are a group payment collection specialist. Generate friendly, effective collection messages that get people to pay without making the organizer feel like a debt collector.
 
