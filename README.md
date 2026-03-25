@@ -25,7 +25,7 @@ Once installed, the plugin gives Claude six commands:
 
 | Command | What it does |
 |---------|-------------|
-| `/launch-campaign` | Walks you through building a fundraising campaign from scratch — story, title, goal, photos, and launch strategy |
+| `/launch-fundraiser` | Walks you through building a fundraising campaign from scratch — story, title, goal, photos, and launch strategy |
 | `/plan-event` | Sets up an event with smart ticketing — tiers, early bird pricing, promotion timeline, and attendee communications |
 | `/collect-from-group` | Creates a group payment collection page — cost splitting, launch messages, and a reminder cadence so you don't have to chase people |
 | `/weekly-checkin` | Weekly health check with a content calendar and specific action items |
@@ -98,7 +98,7 @@ payit2-campaign-manager/
 │           ├── collection-templates.md
 │           └── cost-splitting-guide.md
 ├── commands/
-│   ├── launch-campaign.md        # Create a fundraiser
+│   ├── launch-fundraiser.md        # Create a fundraiser
 │   ├── plan-event.md             # Set up an event with ticketing
 │   ├── collect-from-group.md     # Group payment collection
 │   ├── weekly-checkin.md         # Weekly health check
