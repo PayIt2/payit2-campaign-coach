@@ -115,6 +115,34 @@ Rotate through these content types to keep the feed fresh:
 7. **The Ask** — Direct donation requests
 8. **The Share** — Asking supporters to spread the word
 
+## Event Promotion Differences
+
+When promoting an **event** (not a fundraiser), adjust these strategies:
+
+### Urgency Model
+- Fundraisers use **goal-based urgency**: "We're 60% to our goal — help us close the gap"
+- Events use **countdown urgency**: "Only 12 days until the event" and **scarcity urgency**: "Only 30 tickets left"
+- Combine both: "Early bird ends Friday — 47 of 100 spots claimed"
+
+### Content Angles for Events
+Replace the 8 fundraising content angles with event equivalents:
+1. **Announcement** — What, when, where, why it matters
+2. **Lineup/Agenda** — Speakers, performers, activities, schedule highlights
+3. **Social Proof** — "X people registered", testimonials from past attendees
+4. **Behind-the-Scenes** — Venue prep, speaker interviews, planning sneak peeks
+5. **Countdown** — Milestone countdowns (30 days, 2 weeks, 1 week, tomorrow)
+6. **Last Chance** — Final ticket availability, price increase warnings
+7. **FOMO** — What attendees will experience that non-attendees will miss
+8. **Post-Event** — Highlights, photos, "you had to be there", next event teaser
+
+### Promotion Timeline for Events
+- **6 weeks out**: Announce event, open early bird registration
+- **4 weeks out**: Close early bird, share agenda/lineup, email blast
+- **2 weeks out**: Social proof push ("X tickets sold"), partner cross-promotion
+- **1 week out**: Last chance messaging, direct outreach to undecided
+- **Day of**: Live coverage, social media posts, attendee engagement
+- **Post-event**: Thank yous, photo gallery, feedback survey, next event teaser
+
 ## Additional Resources
 
 - **`references/post-templates.md`** — Ready-to-customize templates for every platform and content angle

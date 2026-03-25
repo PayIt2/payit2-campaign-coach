@@ -146,6 +146,29 @@ Generate weekly performance reports covering:
 4. **What needs attention**: Lowest-scoring factors with specific fixes
 5. **This week's action items**: 3-5 prioritized tasks
 
+## Event-Specific Analytics
+
+When analyzing an **event** (not a fundraiser), track these additional KPIs:
+
+### Event KPIs (Track Weekly)
+| KPI | Healthy Range | Warning Sign |
+|-----|--------------|--------------|
+| Registration velocity | 10-15% of capacity per week | <5% per week after launch |
+| Capacity utilization | On track to 80%+ by event date | <50% at midpoint |
+| Early bird conversion | 25-35% of total tickets | <15% (pricing too high or promotion too weak) |
+| Ticket tier distribution | Even spread across tiers | >80% in cheapest tier (value gap too large) |
+| Share rate | 1 in 5 registrants shares | <1 in 10 (event not share-worthy) |
+| Email open rate | 40-60% for event emails | <25% (subject lines or timing) |
+
+### Event Health Score Adjustments
+When scoring event health, replace donation-specific factors:
+- **Momentum (25%)**: Registration velocity relative to capacity and time remaining
+- **Social reach (20%)**: Shares, tags, partner promotion reach
+- **Page quality (15%)**: Description clarity, visual appeal, tier structure
+- **Registration conversion (15%)**: Visitors-to-registrants ratio (healthy: 15-25%)
+- **Promotion breadth (15%)**: Number of channels actively used
+- **Urgency signals (10%)**: Countdown messaging, scarcity indicators, price tier deadlines
+
 ## Additional Resources
 
 - **`references/benchmark-data.md`** — Detailed category benchmarks and success factors
