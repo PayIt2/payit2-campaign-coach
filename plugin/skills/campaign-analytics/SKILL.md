@@ -7,7 +7,7 @@ description: >
   recommendations to improve results for fundraisers, events, or group collections on PayIt2.
   Also triggers on "campaign metrics", "conversion rate", "analytics", "performance score",
   "campaign diagnosis", "event analytics", or "campaign optimization".
-version: 0.1.0
+version: 0.2.0
 ---
 
 # Campaign Analytics

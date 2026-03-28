@@ -7,7 +7,7 @@ description: >
   conferences, parties, sports events, or any ticketed/registered gathering on PayIt2.
   Also triggers on "ticket tiers", "early bird pricing", "event registration",
   "RSVP page", or "event follow-up".
-version: 0.1.0
+version: 0.2.0
 ---
 
 # Event Management

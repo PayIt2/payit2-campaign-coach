@@ -7,7 +7,7 @@ description: >
   turning donors, attendees, or contributors into advocates on PayIt2. Also triggers on
   "donor retention", "supporter engagement", "gratitude messages", "impact reporting",
   "attendee follow-up", "post-event follow-up", or "supporter CRM".
-version: 0.1.0
+version: 0.2.0
 ---
 
 # Supporter Engagement

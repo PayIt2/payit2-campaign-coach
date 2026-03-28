@@ -7,7 +7,7 @@ description: >
   compelling campaign page for fundraising, events, or group collections on PayIt2. Also triggers
   on "campaign setup", "fundraiser page", "story writing", "campaign description", "campaign goal",
   "create a page", or "new campaign".
-version: 0.1.0
+version: 0.2.0
 ---
 
 # Campaign Creation

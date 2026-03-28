@@ -7,7 +7,7 @@ description: >
   "increase visibility", or needs guidance on multi-channel promotion for fundraisers, events,
   or group collections on PayIt2. Also triggers on "social media strategy", "campaign sharing",
   "email outreach", "press release", "community posting", "event promotion", or "campaign marketing".
-version: 0.1.0
+version: 0.2.0
 ---
 
 # Campaign Promotion

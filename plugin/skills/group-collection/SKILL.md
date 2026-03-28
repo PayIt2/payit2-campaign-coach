@@ -7,7 +7,7 @@ description: >
   or needs guidance on collecting payments from a group of people on PayIt2.
   Also triggers on "group collection", "payment tracking", "cost splitting",
   "team collection", "club fees", "trip fund", or "group gift collection".
-version: 0.1.0
+version: 0.2.0
 ---
 
 # Group Collection
