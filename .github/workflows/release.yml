@@ -1,0 +1,52 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-and-attach:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Update plugin.json version
+        run: |
+          SEMVER="${GITHUB_REF_NAME#v}"
+          python3 -c "
+          import json
+          with open('plugin/.claude-plugin/plugin.json') as f:
+              data = json.load(f)
+          data['version'] = '$SEMVER'
+          with open('plugin/.claude-plugin/plugin.json', 'w') as f:
+              json.dump(data, f, indent=2)
+              f.write('\n')
+          "
+          echo "Set plugin version to $SEMVER"
+
+      - name: Commit version bump
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add plugin/.claude-plugin/plugin.json
+          if git diff --cached --quiet; then
+            echo "Version already up to date, nothing to commit"
+          else
+            git commit -m "chore: bump plugin version to ${GITHUB_REF_NAME#v} [skip ci]"
+            git push origin HEAD:main
+          fi
+
+      - name: Build plugin zip
+        run: |
+          chmod +x build-plugin.sh
+          ./build-plugin.sh
+
+      - name: Upload zip to release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload "$GITHUB_REF_NAME" payit2-campaign-coach.zip --clobber
