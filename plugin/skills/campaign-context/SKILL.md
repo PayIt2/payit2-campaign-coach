@@ -27,6 +27,16 @@ Gather the minimum context needed for the current command through natural conver
 | Channels used so far | /promote, /check-in | Optional |
 | Group size | /campaign, /check-in | Required for group campaigns |
 
+## MCP-First Data Gathering
+
+When the PayIt2 MCP server is available, use it to eliminate manual questions:
+
+1. **If the organizer provides a URL or campaign ID**, call `get_campaign` immediately to pre-fill: type, title, goal, current stats, and timeline. Do not ask for data already returned.
+2. **For /check-in**, also call `get_campaign_stats` for financial detail and `get_campaign_activity` to see the last 30 events — recent activity tells you whether the campaign has momentum or has stalled.
+3. **Cross-session memory**: At the start of any coaching command, call `get_conversation_history` for the campaign. If a session exists from the past 7 days, open with: "Last time we talked about [key recommendation] — have you had a chance to try that?" before diving into new analysis.
+4. **Only ask the organizer to fill gaps** — information not returned by MCP tools. Never re-ask data already fetched.
+5. **Fallback**: If MCP is unavailable (no API key configured), proceed with the manual question flow below.
+
 ## Context-Gathering Rules
 
 1. **Type first.** Always establish campaign type before asking anything else. Ask: "What are you working on — a fundraiser, an event, or a group?"
@@ -64,6 +74,13 @@ Ask in order:
 2. "What would you like to do — thank supporters, post an update, re-engage lapsed supporters, or ask for shares?"
 3. Follow up with only what's needed for that action.
 
-## MCP-Readiness Note
+## MCP Tool Reference
 
-This skill is the adapter layer for a future MCP integration. When a PayIt2 MCP server is added, this skill will query it for campaign data instead of prompting the user. All other skills remain unchanged — they receive context the same way regardless of source.
+| Data needed | MCP tool |
+|-------------|----------|
+| Campaign details (type, title, goal, timeline) | `get_campaign(id_or_slug)` |
+| Financial stats (raised, donors, goal progress) | `get_campaign_stats(campaign_id)` |
+| Recent activity (last 30 events) | `get_campaign_activity(campaign_id)` |
+| Organizer's campaign list | `list_campaigns()` |
+| Past coaching sessions | `get_conversation_history(campaign_id)` |
+| Organizer profile | `get_organizer_profile()` |

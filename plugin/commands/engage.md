@@ -15,6 +15,13 @@ Follow this workflow:
    - **Ask for shares** (turn supporters into advocates)
 
 2. **Gather What's Needed for the Action**:
+
+   **Use MCP tools first** — don't ask the organizer for data you can fetch:
+   - For thank-yous: Call `list_supporters` to get actual names, amounts, and payment status. For a specific person, use `search_supporters(name_or_email)`.
+   - For group re-engagement: Call `get_payment_summary` to see exactly who has and hasn't paid, and the payment breakdown.
+   - For updates: Call `get_campaign_stats` for current progress numbers.
+
+   **Only ask if MCP is unavailable:**
    - For thank-yous: How many people? Do you have names and amounts? What channel (email, text, social, in-campaign post)?
    - For updates: What milestone or news? What's the current progress?
    - For re-engagement: How long since last activity? What's the situation now?
