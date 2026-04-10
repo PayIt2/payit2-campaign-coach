@@ -13,7 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Create release notes
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cat > release-notes.md << 'EOF'
           ## What's New in v1.2.0
@@ -35,11 +37,6 @@ jobs:
 
           **Full Changelog**: https://github.com/PayIt2/payit2-campaign-coach/compare/v1.0.4...v1.2.0
           EOF
-
-      - name: Create release
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
           gh release create v1.2.0 \
             --target main \
             --title "v1.2.0 — MCP Integration, Hooks, and Advanced Features" \
