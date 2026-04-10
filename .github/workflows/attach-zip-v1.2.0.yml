@@ -1,0 +1,48 @@
+name: Attach zip to v1.2.0 release
+
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/attach-zip-v1.2.0.yml']
+
+jobs:
+  attach-zip:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update plugin.json version
+        run: |
+          python3 -c "
+          import json
+          with open('plugin/.claude-plugin/plugin.json') as f:
+              data = json.load(f)
+          data['version'] = '1.2.0'
+          with open('plugin/.claude-plugin/plugin.json', 'w') as f:
+              json.dump(data, f, indent=2)
+              f.write('\n')
+          "
+
+      - name: Build plugin zip
+        run: |
+          chmod +x build-plugin.sh
+          ./build-plugin.sh
+
+      - name: Upload zip to release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload v1.2.0 payit2-campaign-coach.zip --clobber
+
+      - name: Clean up this workflow
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull origin main
+          git rm .github/workflows/attach-zip-v1.2.0.yml
+          git commit -m "chore: remove one-time zip attach workflow [skip ci]"
+          git push origin main
