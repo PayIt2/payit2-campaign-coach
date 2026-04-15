@@ -1,7 +1,8 @@
 ---
-description: Run a weekly health check on any campaign — diagnose issues and get a prioritized action plan
+name: check-in
+description: Run a weekly health check on any campaign - diagnose issues and get a prioritized action plan
 allowed-tools: Read, Write, WebSearch
-argument-hint: [optional: campaign name or current stats]
+argument-hint: "[optional: campaign name or current stats]"
 ---
 
 Run a campaign health check: $ARGUMENTS
@@ -10,7 +11,7 @@ Follow this diagnostic workflow:
 
 1. **Gather Context**: Use the campaign-context skill to establish:
    - Campaign type, title, URL (if available)
-   - Current numbers — ask by type:
+   - Current numbers - ask by type:
      - **Fundraiser**: Amount raised, donor count, days active, goal, channels being used
      - **Event**: Tickets sold, total capacity, days until event, channels being used
      - **Collection**: Payments received, people paid vs. total group, days until deadline, channels used
@@ -29,9 +30,9 @@ Follow this diagnostic workflow:
    Name the primary bottleneck clearly.
 
 4. **This Week's Action Plan**: Prescribe 3-5 actions in priority order:
-   - 🔴 Do today (highest impact, lowest effort)
-   - 🟡 Do this week (medium effort, strong impact)
-   - 🟢 Plan for next week (strategic, longer-term)
+   - Do today (highest impact, lowest effort)
+   - Do this week (medium effort, strong impact)
+   - Plan for next week (strategic, longer-term)
 
 5. **Generate Fresh Content**: If the bottleneck is traffic or engagement, dispatch the content-generator agent to produce:
    - 3-5 social posts for the coming week

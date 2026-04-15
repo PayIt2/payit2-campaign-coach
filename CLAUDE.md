@@ -17,17 +17,16 @@ All plugin content lives in the `plugin/` folder:
 ```
 plugin/
   .claude-plugin/plugin.json    # Plugin manifest
-  skills/                       # 5 workflow skills
-    campaign-context/SKILL.md     # Shared context-gathering engine
-    campaign-creation/SKILL.md    # Create and launch campaigns
-    campaign-promotion/SKILL.md   # Multi-channel promotion strategies
-    campaign-analytics/SKILL.md   # Campaign health analysis
-    supporter-engagement/SKILL.md # Thank-yous, re-engagement, outreach
-  commands/                     # 4 slash commands
-    campaign.md                   # /campaign - create and launch
-    check-in.md                   # /check-in - weekly health check
-    promote.md                    # /promote - promotion strategy
-    engage.md                     # /engage - supporter communications
+  skills/                       # 9 skills (5 workflow + 4 user-facing)
+    campaign/SKILL.md              # /campaign - create and launch
+    check-in/SKILL.md              # /check-in - weekly health check
+    promote/SKILL.md               # /promote - promotion strategy
+    engage/SKILL.md                # /engage - supporter communications
+    campaign-context/SKILL.md      # Shared context-gathering engine
+    campaign-creation/SKILL.md     # Create and launch campaigns
+    campaign-promotion/SKILL.md    # Multi-channel promotion strategies
+    campaign-analytics/SKILL.md    # Campaign health analysis
+    supporter-engagement/SKILL.md  # Thank-yous, re-engagement, outreach
   agents/                       # 3 autonomous agents
     campaign-assistant.md             # Deep campaign health analysis and strategy
     content-generator.md          # Batch content generation
@@ -50,6 +49,6 @@ This creates `payit2-campaign-assistant.zip` in the repo root. Upload it to Clau
 
 See PLATFORM-STANDARDS.md Section 15 for the full git workflow. Repo-specific additions:
 
-1. Edit files inside `plugin/` (skills, agents, commands, or manifest)
+1. Edit files inside `plugin/` (skills, agents, or manifest)
 2. Run `./build-plugin.sh` to rebuild the zip
 3. Commit both the changed source files and the updated zip

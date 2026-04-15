@@ -1,7 +1,8 @@
 ---
-description: Manage supporter relationships — thank-yous, updates, re-engagement, and advocacy asks
+name: engage
+description: Manage supporter relationships - thank-yous, updates, re-engagement, and advocacy asks
 allowed-tools: Read, Write
-argument-hint: [optional: what you want to do — thank donors, post update, re-engage, etc.]
+argument-hint: "[optional: what you want to do - thank donors, post update, re-engage, etc.]"
 ---
 
 Manage supporter engagement for your campaign: $ARGUMENTS
@@ -16,7 +17,7 @@ Follow this workflow:
 
 2. **Gather What's Needed for the Action**:
 
-   **Use MCP tools first** — don't ask the organizer for data you can fetch:
+   **Use MCP tools first** - don't ask the organizer for data you can fetch:
    - For thank-yous: Call `list_supporters` to get actual names, amounts, and payment status. For a specific person, use `search_supporters(name_or_email)`.
    - For group re-engagement: Call `get_payment_summary` to see exactly who has and hasn't paid, and the payment breakdown.
    - For updates: Call `get_campaign_stats` for current progress numbers.
@@ -25,7 +26,7 @@ Follow this workflow:
    - For thank-yous: How many people? Do you have names and amounts? What channel (email, text, social, in-campaign post)?
    - For updates: What milestone or news? What's the current progress?
    - For re-engagement: How long since last activity? What's the situation now?
-   - For share asks: Who are you asking — donors, attendees, or members?
+   - For share asks: Who are you asking - donors, attendees, or members?
 
 3. **Generate Personalized Messages**: Adapt by type and action:
 
@@ -35,14 +36,14 @@ Follow this workflow:
    - Group: Payment acknowledgment + progress update
 
    **Post update:**
-   - Fundraiser: Milestone structure (25%, 50%, 75%, goal) — use update content framework
+   - Fundraiser: Milestone structure (25%, 50%, 75%, goal) - use update content framework
    - Event: Lineup reveal, logistics update, "can't wait to see you" energy
    - Group: Progress tally ("12 of 20 paid"), deadline context
 
    **Re-engage:**
    - Fundraiser: Story update for lapsed donors, gentle share request
    - Event: Last-chance message for attendees who haven't registered
-   - Group: Private 1:1 follow-up for unpaid members (Friendly Collector principles — never public, never accusatory)
+   - Group: Private 1:1 follow-up for unpaid members (Friendly Collector principles - never public, never accusatory)
 
    **Ask for shares:**
    - All types: Pre-written share content they can copy-paste, co-organizer invitation, challenge format

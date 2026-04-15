@@ -1,7 +1,8 @@
 ---
+name: promote
 description: Build a multi-channel promotion strategy and content calendar for any campaign type
 allowed-tools: Read, Write, WebSearch
-argument-hint: [optional: campaign name, URL, or type]
+argument-hint: "[optional: campaign name, URL, or type]"
 ---
 
 Build a promotion strategy for this campaign: $ARGUMENTS
