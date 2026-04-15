@@ -75,7 +75,7 @@ Run through all 3 diagnostic stages:
 - Event: registration page visits, social reach, partner posts
 - Group: did launch message reach all members?
 
-**If traffic is low**: Problem is promotion, not the page. Reference campaign-promotion skill.
+**If traffic is low**: Problem is promotion, not the page. Reference the /promote skill.
 
 ### Stage 2: Conversion Diagnosis
 **Question**: Are visitors taking action?

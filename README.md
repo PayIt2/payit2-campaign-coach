@@ -74,15 +74,13 @@ plugin/
 │   │   └── references/
 │   │       ├── benchmark-data.md
 │   │       └── optimization-checklist.md
-│   ├── promote/                      # /promote - promotion strategy
-│   │   └── SKILL.md
-│   ├── engage/                       # /engage - supporter communications
-│   │   └── SKILL.md
-│   ├── campaign-promotion/           # Multi-channel promotion engine
+│   ├── promote/                      # /promote - promotion strategy (includes multi-channel playbooks)
 │   │   ├── SKILL.md
 │   │   └── references/
 │   │       ├── post-templates.md
 │   │       └── email-sequences.md
+│   ├── engage/                       # /engage - supporter communications
+│   │   └── SKILL.md
 │   └── supporter-engagement/         # Supporter communications for all types
 │       ├── SKILL.md
 │       └── references/
@@ -102,7 +100,7 @@ plugin/
 
 ### Components
 
-**Skills** (`skills/`) -- Seven skills covering all campaign types. `campaign-context` is a shared context-gathering engine invoked by every command. Four user-facing skills map to the four commands. Two workflow skills provide promotion and engagement logic.
+**Skills** (`skills/`) -- Six skills covering all campaign types. `campaign-context` is a shared context-gathering engine invoked by every command. Four user-facing skills map to the four commands. One workflow skill provides engagement logic.
 
 **Commands** (`commands/`) — Four slash commands for common workflows. Direct entry points without needing to describe what you want.
 
@@ -118,9 +116,9 @@ Each skill pulls from reference documents that encode research and best practice
 - `references/ticket-strategy.md` — Ticket type templates, early bird formulas, group discounts
 - `references/cost-splitting-guide.md` — Fixed, tiered, and flexible split models with fee transparency
 
-**Promotion:**
-- [post-templates.md](plugin/skills/campaign-promotion/references/post-templates.md) — Platform-specific social post templates
-- [email-sequences.md](plugin/skills/campaign-promotion/references/email-sequences.md) — Full email drip sequences
+**Promotion (within promote):**
+- [post-templates.md](plugin/skills/promote/references/post-templates.md) - Platform-specific social post templates
+- [email-sequences.md](plugin/skills/promote/references/email-sequences.md) - Full email drip sequences
 
 **Analytics (within check-in):**
 - [benchmark-data.md](plugin/skills/check-in/references/benchmark-data.md) -- Category benchmarks and KPIs
