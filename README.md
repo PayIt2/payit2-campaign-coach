@@ -67,13 +67,14 @@ plugin/
 ├── skills/
 │   ├── campaign-context/             # Shared context engine (used by all commands)
 │   │   └── SKILL.md
-│   ├── campaign-creation/            # Page building for all campaign types
-│   │   ├── SKILL.md
-│   │   └── references/
-│   │       ├── story-templates.md
-│   │       ├── title-formulas.md
-│   │       ├── ticket-strategy.md
-│   │       └── cost-splitting-guide.md
+│   ├── campaign/                     # /campaign - create and launch (full creation workflow)
+│   │   └── SKILL.md
+│   ├── check-in/                     # /check-in - weekly health check
+│   │   └── SKILL.md
+│   ├── promote/                      # /promote - promotion strategy
+│   │   └── SKILL.md
+│   ├── engage/                       # /engage - supporter communications
+│   │   └── SKILL.md
 │   ├── campaign-promotion/           # Multi-channel promotion engine
 │   │   ├── SKILL.md
 │   │   └── references/
@@ -103,7 +104,7 @@ plugin/
 
 ### Components
 
-**Skills** (`skills/`) — Five workflow skills covering all campaign types. `campaign-context` is a shared context-gathering engine invoked by every command. The remaining four map to the four commands.
+**Skills** (`skills/`) — Eight skills covering all campaign types. `campaign-context` is a shared context-gathering engine invoked by every command. Four user-facing skills map to the four commands. Three workflow skills provide promotion, analytics, and engagement logic.
 
 **Commands** (`commands/`) — Four slash commands for common workflows. Direct entry points without needing to describe what you want.
 
@@ -113,11 +114,11 @@ plugin/
 
 Each skill pulls from reference documents that encode research and best practices:
 
-**Campaign creation:**
-- [story-templates.md](plugin/skills/campaign-creation/references/story-templates.md) — Category-specific story frameworks
-- [title-formulas.md](plugin/skills/campaign-creation/references/title-formulas.md) — Proven title formulas with scoring
-- [ticket-strategy.md](plugin/skills/campaign-creation/references/ticket-strategy.md) — Ticket type templates, early bird formulas, group discounts
-- [cost-splitting-guide.md](plugin/skills/campaign-creation/references/cost-splitting-guide.md) — Fixed, tiered, and flexible split models with fee transparency
+**Campaign creation** (referenced within campaign/SKILL.md):
+- `references/story-templates.md` — Category-specific story frameworks
+- `references/title-formulas.md` — Proven title formulas with scoring
+- `references/ticket-strategy.md` — Ticket type templates, early bird formulas, group discounts
+- `references/cost-splitting-guide.md` — Fixed, tiered, and flexible split models with fee transparency
 
 **Promotion:**
 - [post-templates.md](plugin/skills/campaign-promotion/references/post-templates.md) — Platform-specific social post templates

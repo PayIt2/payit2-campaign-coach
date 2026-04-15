@@ -47,7 +47,7 @@ When the PayIt2 MCP server is available, use it to eliminate manual questions:
 ## Context Questions by Command
 
 ### /campaign (Create & Launch)
-Required: campaign type, then branch into type-specific story interview (see campaign-creation skill).
+Required: campaign type, then branch into type-specific story interview (see campaign skill).
 
 ### /promote (Drive Traffic)
 Ask in order, stopping when you have enough:

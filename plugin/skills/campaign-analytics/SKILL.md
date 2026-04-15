@@ -70,7 +70,7 @@ When an organizer asks "why isn't this working?" run through all 3 stages:
 - Event: visit-to-registration rate (healthy: 15-25%), ticket tier distribution
 - Group: payment rate per reminder sent (should increase after each message)
 
-**If traffic is fine but conversion is low**: Problem is the page. Reference campaign-creation skill.
+**If traffic is fine but conversion is low**: Problem is the page. Reference campaign skill.
 
 ### Stage 3: Engagement Diagnosis
 **Question**: Are supporters becoming advocates?
