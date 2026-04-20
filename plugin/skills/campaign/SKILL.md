@@ -298,15 +298,34 @@ After completing Steps 1-7:
 
    Save the campaign ID and URL from the response.
 
-3. **Upload cover image (if available).** The `upload_campaign_image` tool needs base64-encoded image bytes. How you get there depends on how the organizer shared the image:
+3. **Upload cover image (if available).** The `upload_campaign_image` tool accepts either `imageUrl` (preferred) or `imageBase64`. Always prefer `imageUrl` - base64 payloads blow past the ~25K token Read limit for anything above ~300KB, while any public URL is fetched server-side with no size penalty.
 
-   - **File path on disk** (e.g. `~/Downloads/hero.jpg`): run `base64 -i <path> | tr -d '\n'` via Bash, capture the output, pass it as `imageBase64`. Set `mimeType` based on the extension (JPEG, PNG, or WebP).
-   - **Public URL** (Slack CDN, Google Drive share link, S3, any hosted image): if the MCP tool supports `imageUrl`, pass the URL directly. Otherwise, `curl -sL <url> -o /tmp/campaign-hero.<ext>` then base64-encode as above.
+   **Before you upload, verify the source is actually high-resolution:**
+   ```bash
+   sips -g pixelWidth -g pixelHeight "<file>"
+   ```
+   File size is a misleading proxy for photos. An iMessage/AirDrop preview can be 600KB+ on disk but only 640×480 pixels - PNG lossless compression bloats the byte count without adding detail. If dimensions are under ~1600 wide, ask the organizer for the original (Photos > File > Export > Export Unmodified Original, or the full-size version from iCloud). Multiple `IMG_1234.png`, `IMG_1234 (1).png`, `IMG_1234 (2).png` in Downloads often means the biggest number is the full-res.
+
+   **Pre-crop to the display aspect ratio (3:1) before upload.** Event/fund/group cover containers on the public page are `aspect-[3/1]` with `object-cover`. A 4:3 or 16:9 source loses 40-55% of its pixels to the center-strip crop and has to scale up to fill the wider container, which looks soft. Cropping to 3:1 up front preserves composition and keeps every pixel on screen. Use Python/PIL for offset crops (sips only crops centered):
+   ```python
+   from PIL import Image
+   img = Image.open('source.png')
+   W, H = img.size
+   target_h = W // 3
+   y0 = max(0, (H - target_h) // 2 - 200)  # bias slightly toward top to keep sky
+   img.crop((0, y0, W, y0 + target_h)).convert('RGB').save('cover.jpg', 'JPEG', quality=92, optimize=True)
+   ```
+
+   **Pathways by how the image was shared:**
+   - **File path on disk** (e.g. `~/Downloads/hero.jpg`): verify dimensions, pre-crop, then push the result to a temp location the MCP can fetch (a public GitHub raw URL works well - use the `payit2-plugins-marketplace` repo's `tmp-assets/` folder, then clean up with a follow-up commit). Pass as `imageUrl`. Only fall back to `imageBase64` if the file is already under ~300KB.
+   - **Public URL** (Slack CDN, Google Drive share link, S3): pass directly as `imageUrl`, but still verify dimensions first with a `curl | sips` round-trip if quality matters.
    - **Inline image pasted in chat:** you can see it visually but the bytes are NOT on disk and NOT accessible to you. Do not silently skip it. Tell the organizer exactly one of:
      1. "Drag the image from this chat to your Downloads folder and tell me the filename."
      2. "If it's already hosted anywhere (Slack, Drive, a website), paste the URL."
 
      Then proceed with whichever path they choose. Never claim the image was uploaded when it wasn't.
+
+   **Gotchas:** git pushes of files over ~1MB can fail with HTTP 400 `send-pack: unexpected disconnect`. Either keep the JPEG under ~1.5MB (quality 88, max 1800 wide is usually safe) or bump `git config http.postBuffer 524288000` before pushing. After upload, verify the result with `curl -sI <cover-url>` and `sips -g pixelWidth -g pixelHeight` - backend resizes to max 1600x900 fit:inside, so a well-prepped 3:1 crop comes out at 1600x533.
 
    After a successful upload, confirm the image is attached and mention it in the final recap.
 
