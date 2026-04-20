@@ -266,6 +266,25 @@ After completing Steps 1-7:
      - Free RSVP: `{ title: "General Admission", amount: 0, groupTitle: "Tickets", groupMode: "pick_one", isRequired: true }`
      - Add-ons (T-shirt, parking, meal): separate group with `groupMode: "pick_any"`, `isRequired: false`
      - **Platform note:** PayIt2 renders a built-in quantity selector for every option. Do NOT add `questions` to collect quantity for options (e.g. "How many Medium T-shirts?") — this creates redundant fields. Only use questions for information the option selector cannot capture (e.g. size preferences, names, dietary restrictions).
+
+   **Options vs. Questions — best practices:**
+
+   Default to **options** whenever the organizer needs to count or select something. Questions are for open-ended or personal information only.
+
+   | Use an **option** when… | Use a **question** when… |
+   |------------------------|--------------------------|
+   | Counting people — adults, kids, guests | Collecting names of guests coming |
+   | Selecting an item — t-shirt size, meal choice, parking pass | Dietary restrictions or food allergies |
+   | Choosing a tier — VIP, General, Student | Special accommodations or accessibility needs |
+   | Any add-on with a quantity — extra shirts, extra tickets | Free-form comments or notes |
+   | Anything you'd phrase as "how many X" or "which X" | Anything you'd phrase as "tell me about X" |
+
+   Apply this heuristic during the interview (Steps 2–3): whenever the organizer mentions counting people or selecting items, propose an option group — not a question. Reserve questions for the information that genuinely can't be expressed as a checkbox or quantity.
+
+   **T-shirt example:** Use one option per size (Small, Medium, Large, XL, 2XL) at $20 each in a `pick_any` group — attendees use the quantity selector. Do not ask "What size and how many?" as a question.
+
+   **Attendee count example:** Use "Adult" and "Child" as free ($0) options in a `pick_any` group called "Who's Coming?" — attendees use the quantity selector. Do not ask "How many adults/kids?" as a question.
+
    - `questions` — use sparingly. One question per distinct piece of information needed. Never add two questions that ask for the same thing (e.g. do not add both "Who will be attending?" and "Who will be coming with you?" — pick one). If adding questions in multiple calls, call `list_campaign_questions` first to see what already exists and avoid duplicates.
 
 3. **Managing existing questions.** The MCP provides three tools for question management after creation:
